@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGJ2018Echolocation", "GGJ2018Echolocation.csproj", "{26792FFC-CC53-8F1D-9EEA-4B6EA9422D60}"
 EndProject
 Global
