@@ -19,19 +19,20 @@ public class FadingLight : MonoBehaviour
 
     private void Start()
     {
-        fadeSpeed = lightComponent.range / fadeSeconds;
+        fadeSpeed = lightComponent.spotAngle / fadeSeconds;
     }
 
     private void Update()
     {
-        float newRange = lightComponent.range - fadeSpeed * Time.deltaTime;
-        if (newRange <= 0.0f)
+        float newValue = lightComponent.spotAngle - fadeSpeed * Time.deltaTime;
+        if (newValue <= 0.0f)
         {
+            //Debug.Log("Fading light destroyed.");
             Destroy(gameObject);
         }
         else
         {
-            lightComponent.range = newRange;
+            lightComponent.spotAngle = newValue;
         }
     }
 }

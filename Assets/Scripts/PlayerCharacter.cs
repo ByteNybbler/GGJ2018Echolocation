@@ -32,7 +32,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            createBurst.Burst(transform.right);
+            createBurst.Burst(transform.up);
         }
     }
 }
