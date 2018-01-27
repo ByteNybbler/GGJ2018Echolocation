@@ -70,6 +70,7 @@ public class PlayerCharacter : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
+        Debug.Log("Collision!");
+        Debug.Log(other.gameObject.name);
     }
 }
