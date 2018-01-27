@@ -14,8 +14,16 @@ public class PlayerCharacter : MonoBehaviour
     [Tooltip("Reference to the CreateBurst component.")]
     CreateBurst createBurst;
     [SerializeField]
+    [Tooltip("How quickly the player moves.")]
+    float moveSpeed;
+    [SerializeField]
     [Tooltip("How quickly the player rotates.")]
     float rotateSpeed;
+    [SerializeField]
+    [Tooltip("Number of seconds between each ping.")]
+    float secondsBetweenPings;
+
+    float secondsSinceLastPing = 0.0f;
 
     private void Update()
     {
@@ -23,16 +31,30 @@ public class PlayerCharacter : MonoBehaviour
         float inputVertical = Input.GetAxis("Vertical");
 
         //Vector2 move = new Vector2(inputHorizontal, inputVertical);
-        Vector2 move = new Vector2(0.0f, inputVertical);
+        Vector2 move = new Vector2(0.0f, inputVertical) * moveSpeed;
 
         float torque = -inputHorizontal * rotateSpeed;
         //Debug.Log(torque);
         rb.AddTorque(torque);
         rb.AddForce(transform.rotation * move);
 
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            createBurst.Burst(transform.up);
+            Burst();
         }
+        */
+
+        secondsSinceLastPing += Time.deltaTime;
+        while (secondsSinceLastPing > secondsBetweenPings)
+        {
+            secondsSinceLastPing -= secondsBetweenPings;
+            Burst();
+        }
+    }
+
+    private void Burst()
+    {
+        createBurst.Burst(transform.up);
     }
 }

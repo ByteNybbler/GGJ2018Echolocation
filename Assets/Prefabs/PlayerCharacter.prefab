@@ -187,7 +187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 50667813430846258}
   createBurst: {fileID: 114639269016178496}
+  moveSpeed: 0.7
   rotateSpeed: 0.02
+  secondsBetweenPings: 3
 --- !u!114 &114639269016178496
 MonoBehaviour:
   m_ObjectHideFlags: 1
