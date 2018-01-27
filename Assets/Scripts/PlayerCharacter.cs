@@ -68,9 +68,15 @@ public class PlayerCharacter : MonoBehaviour
         // TODO
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("OnCollisionEnter2D!");
+        Debug.Log(other.gameObject.name);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision!");
+        Debug.Log("OnTriggerEnter2D!");
         Debug.Log(other.gameObject.name);
     }
 }
