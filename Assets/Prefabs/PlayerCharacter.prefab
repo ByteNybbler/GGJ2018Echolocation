@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50667813430846258}
   - component: {fileID: 60655399128489340}
   - component: {fileID: 114639269016178496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 124458598754590028}
   - component: {fileID: 81668798793336930}
   - component: {fileID: 114848922213229952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -157,14 +157,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0103086345, y: 0.073514156}
-      - {x: -0.07693841, y: 0.0069157556}
-      - {x: -0.13476543, y: -0.055430677}
-      - {x: -0.06119038, y: -0.05522592}
-      - {x: 0.12312426, y: -0.05692672}
-      - {x: 0.13291954, y: -0.056485828}
+    - - {x: -0.011319871, y: 0.065332845}
+      - {x: -0.070870966, y: 0.0043322346}
+      - {x: -0.12970923, y: -0.053277723}
+      - {x: -0.12986477, y: -0.06462684}
+      - {x: -0.06119038, y: -0.06426839}
+      - {x: 0.12969734, y: -0.06467739}
+      - {x: 0.12988584, y: -0.053041086}
+      - {x: 0.13039145, y: -0.052179888}
       - {x: 0.09210048, y: -0.011619549}
-      - {x: 0.0061476864, y: 0.073514156}
+      - {x: 0.013226371, y: 0.064902276}
 --- !u!81 &81668798793336930
 AudioListener:
   m_ObjectHideFlags: 1
@@ -185,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 50667813430846258}
   createBurst: {fileID: 114639269016178496}
-  rotateSpeed: 0.1
+  rotateSpeed: 0.02
 --- !u!114 &114639269016178496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1363700327254036, guid: 0d276e72cb5a3fe4ab806a61dbdf9429, type: 2}
-  count: 16
-  speed: 3
+  count: 75
+  speed: 1
   spread: 180
 --- !u!114 &114848922213229952
 MonoBehaviour:
