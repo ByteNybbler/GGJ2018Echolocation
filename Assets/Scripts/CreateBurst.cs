@@ -25,7 +25,7 @@ public class CreateBurst : MonoBehaviour
     public void Burst(Vector2 direction)
     {
         float degreeDifference = spread / count;
-        float degreesSoFar = 0.0f;
+        float degreesSoFar = degreeDifference * 0.5f;
         for (int i = 0; i < count; ++i)
         {
             GameObject newObj = GameObject.Instantiate(obj, transform.position, Quaternion.identity);
