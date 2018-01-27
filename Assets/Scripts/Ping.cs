@@ -97,7 +97,7 @@ public class Ping : MonoBehaviour
     {
         if (collision.gameObject.layer == coinLayer)
         {
-            Debug.Log("It's a coin!");
+            //Debug.Log("It's a coin!");
             ChangeColor(colorCoin);
         }
         rb.constraints |= RigidbodyConstraints2D.FreezePosition;

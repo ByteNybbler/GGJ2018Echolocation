@@ -22,6 +22,9 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     [Tooltip("Number of seconds between each ping.")]
     float secondsBetweenPings;
+    [SerializeField]
+    [Tooltip("AudioSource to use for playing the ping sound effect.")]
+    AudioSource audioSourcePing;
 
     float secondsSinceLastPing = 0.0f;
 
@@ -53,8 +56,20 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    // Ping!
     private void Burst()
     {
         createBurst.Burst(transform.up);
+        audioSourcePing.Play();
+    }
+
+    private void Die()
+    {
+        // TODO
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other.name);
     }
 }
