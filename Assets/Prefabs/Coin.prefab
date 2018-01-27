@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4794401161832736}
   - component: {fileID: 212543255374501954}
   - component: {fileID: 60627736267977402}
+  - component: {fileID: 114785508126244340}
   m_Layer: 10
   m_Name: Coin
   m_TagString: Untagged
@@ -77,6 +78,18 @@ PolygonCollider2D:
       - {x: 0.012238979, y: 0.04923767}
       - {x: -0.0110241175, y: 0.049733043}
       - {x: -0.0267936, y: 0.03354466}
+--- !u!114 &114785508126244340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373691387597594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad6494ebfc91dd4e84ffaecc8d09ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 212543255374501954}
 --- !u!212 &212543255374501954
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -91,7 +104,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
