@@ -111,6 +111,8 @@ MonoBehaviour:
   fadeOutSeconds: 2
   render: {fileID: 212327411968691184}
   rb: {fileID: 50372221215478936}
+  colorRegular: {r: 1, g: 0, b: 0, a: 1}
+  colorCoin: {r: 0.9862069, g: 1, b: 0, a: 1}
 --- !u!212 &212327411968691184
 SpriteRenderer:
   m_ObjectHideFlags: 1

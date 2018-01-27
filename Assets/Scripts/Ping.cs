@@ -27,11 +27,34 @@ public class Ping : MonoBehaviour
     [SerializeField]
     [Tooltip("Reference to the rigidbody component.")]
     Rigidbody2D rb;
+    [SerializeField]
+    [Tooltip("The ping's default color.")]
+    Color colorRegular;
+    [SerializeField]
+    [Tooltip("The ping's color when it hits a coin.")]
+    Color colorCoin;
 
     bool fadingOut = false;
     float secondsLived = 0.0f;
     float fadeOutDelaySecondsPassed = 0.0f;
     float fadeOutSecondsPassed = 0.0f;
+    Color oldColor;
+    Color targetColor;
+    float targetColorChangeTime = 0.0f;
+    int coinLayer;
+
+    private void Awake()
+    {
+        coinLayer = LayerMask.NameToLayer("Coins");
+    }
+
+    private void Start()
+    {
+        oldColor = colorRegular;
+        render.color = colorRegular;
+        targetColor = render.color;
+        targetColorChangeTime = Time.time;
+    }
 
     private void Update()
     {
@@ -39,7 +62,12 @@ public class Ping : MonoBehaviour
         {
             Terminate();
         }
-        secondsLived += Time.deltaTime;
+        else
+        {
+            secondsLived += Time.deltaTime;
+        }
+
+        render.color = Color.Lerp(oldColor, targetColor, Time.time - targetColorChangeTime);
 
         if (fadingOut)
         {
@@ -67,21 +95,27 @@ public class Ping : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*
-        foreach (ContactPoint2D cp in collision.contacts)
+        if (collision.gameObject.layer == coinLayer)
         {
-            Vector2 normal = cp.normal;
+            Debug.Log("It's a coin!");
+            ChangeColor(colorCoin);
         }
-        */
+        rb.constraints |= RigidbodyConstraints2D.FreezePosition;
+        rb.velocity = Vector2.zero;
         Terminate();
     }
 
     private void Terminate()
     {
-        rb.constraints |= RigidbodyConstraints2D.FreezePosition;
-        rb.velocity = Vector2.zero;
         fadingOut = true;
         //GameObject.Instantiate(prefabLight, transform.position + Vector3.back, Quaternion.identity);
         //Destroy(gameObject);
+    }
+
+    private void ChangeColor(Color col)
+    {
+        oldColor = render.color;
+        targetColor = col;
+        targetColorChangeTime = Time.time;
     }
 }
