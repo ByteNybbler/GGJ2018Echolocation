@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  prefabLight: {fileID: 0}
 --- !u!212 &212327411968691184
 SpriteRenderer:
   m_ObjectHideFlags: 1
