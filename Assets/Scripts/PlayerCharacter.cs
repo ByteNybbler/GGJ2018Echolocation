@@ -78,5 +78,11 @@ public class PlayerCharacter : MonoBehaviour
     {
         Debug.Log("OnTriggerEnter2D!");
         Debug.Log(other.gameObject.name);
+
+        if (other.gameObject.tag == "Exit")
+        {
+            Debug.Log("Touched exit!");
+            SceneUtil.LoadNextScene();
+        }
     }
 }
