@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212327411968691184}
   - component: {fileID: 50372221215478936}
   - component: {fileID: 60876842579831692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ping1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363700327254036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.391, y: 1.091, z: 0}
+  m_LocalPosition: {x: -1.978576, y: 0.79116344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
