@@ -107,6 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
+  fadeOutDelaySeconds: 0.5
+  fadeOutSeconds: 2
+  render: {fileID: 212327411968691184}
+  rb: {fileID: 50372221215478936}
 --- !u!212 &212327411968691184
 SpriteRenderer:
   m_ObjectHideFlags: 1
