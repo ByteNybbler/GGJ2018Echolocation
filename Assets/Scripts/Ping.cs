@@ -10,6 +10,9 @@ public class Ping : MonoBehaviour
     [SerializeField]
     [Tooltip("How many seconds the ping exists before getting destroyed.")]
     float lifetime;
+    [SerializeField]
+    [Tooltip("The prefab to use for the light.")]
+    GameObject prefabLight;
 
     float secondsLived = 0.0f;
 
@@ -20,5 +23,15 @@ public class Ping : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        GameObject.Instantiate(prefabLight, transform);
     }
 }

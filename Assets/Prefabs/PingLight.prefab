@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321651859342808}
   - component: {fileID: 108174178717297606}
+  - component: {fileID: 114957705892628738}
   m_Layer: 0
   m_Name: PingLight
   m_TagString: Untagged
@@ -76,3 +77,16 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114957705892628738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533688709027760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba23e4c5ae9073439d967310d8f595e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightComponent: {fileID: 108174178717297606}
+  fadeSeconds: 2
