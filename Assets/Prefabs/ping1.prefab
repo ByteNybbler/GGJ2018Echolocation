@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212327411968691184}
   - component: {fileID: 50372221215478936}
   - component: {fileID: 60876842579831692}
+  - component: {fileID: 114799907995657464}
   m_Layer: 8
   m_Name: ping1
   m_TagString: Untagged
@@ -94,6 +95,20 @@ PolygonCollider2D:
       - {x: 0.050450027, y: 0.008597851}
       - {x: 0.010673344, y: 0.04968989}
       - {x: -0.009047978, y: 0.049549937}
+--- !u!114 &114799907995657464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363700327254036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa606385dca1044b93f6c4711b0dc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
+  prefabLight: {fileID: 1533688709027760, guid: 839c689e9ebfc9d45a20f616d4aa9f28,
+    type: 2}
 --- !u!212 &212327411968691184
 SpriteRenderer:
   m_ObjectHideFlags: 1
