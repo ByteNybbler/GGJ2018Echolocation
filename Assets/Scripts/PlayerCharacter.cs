@@ -13,19 +13,26 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     [Tooltip("Reference to the CreateBurst component.")]
     CreateBurst createBurst;
+    [SerializeField]
+    [Tooltip("How quickly the player rotates.")]
+    float rotateSpeed;
 
     private void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float inputHorizontal = Input.GetAxis("Horizontal");
+        float inputVertical = Input.GetAxis("Vertical");
 
-        Vector2 move = new Vector2(moveHorizontal, moveVertical);
+        //Vector2 move = new Vector2(inputHorizontal, inputVertical);
+        Vector2 move = new Vector2(0.0f, inputVertical);
 
-        rb.AddForce(move);
+        float torque = -inputHorizontal * rotateSpeed;
+        //Debug.Log(torque);
+        rb.AddTorque(torque);
+        rb.AddForce(transform.rotation * move);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            createBurst.Burst();
+            createBurst.Burst(transform.up);
         }
     }
 }

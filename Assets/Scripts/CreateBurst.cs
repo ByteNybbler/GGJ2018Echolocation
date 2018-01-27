@@ -16,17 +16,21 @@ public class CreateBurst : MonoBehaviour
     [SerializeField]
     [Tooltip("The speed at which the objects will move.")]
     float speed;
+    [SerializeField]
+    [Tooltip("The number of degrees to use in the burst.")]
+    float spread;
 
     // Create the objects.
-    public void Burst()
+    // direction can be Vector2.up, or whatever direction the player is facing in.
+    public void Burst(Vector2 direction)
     {
-        float degreeDifference = 360.0f / count;
+        float degreeDifference = spread / count;
         float degreesSoFar = 0.0f;
         for (int i = 0; i < count; ++i)
         {
             GameObject newObj = GameObject.Instantiate(obj, transform.position, Quaternion.identity);
             Rigidbody2D rb = newObj.GetComponent<Rigidbody2D>();
-            rb.velocity = Quaternion.AngleAxis(degreesSoFar, Vector3.forward) * Vector2.up * speed;
+            rb.velocity = Quaternion.AngleAxis(degreesSoFar, Vector3.forward) * direction * speed;
             degreesSoFar += degreeDifference;
         }
     }
