@@ -68,20 +68,11 @@ public class PlayerCharacter : MonoBehaviour
         // TODO
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnCollisionEnter2D!");
-        Debug.Log(other.gameObject.name);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("OnTriggerEnter2D!");
-        Debug.Log(other.gameObject.name);
-
-        if (other.gameObject.tag == "Exit")
+        if (collision.gameObject.tag == "Exit")
         {
-            Debug.Log("Touched exit!");
+            //Debug.Log("Touched exit!");
             SceneUtil.LoadNextScene();
         }
     }

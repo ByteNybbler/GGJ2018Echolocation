@@ -45,7 +45,7 @@ public class Ping : MonoBehaviour
 
     private void Awake()
     {
-        coinLayer = LayerMask.NameToLayer("Coins");
+        coinLayer = LayerMask.NameToLayer("Coin");
     }
 
     private void Start()
