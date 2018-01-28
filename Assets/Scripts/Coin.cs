@@ -16,6 +16,7 @@ public class Coin : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             OnCollected();
+            collision.GetComponent<PlayerCharacter>().PlaySoundCoin();
         }
     }
 

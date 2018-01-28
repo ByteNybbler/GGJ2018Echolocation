@@ -35,16 +35,26 @@ public class PlayerCharacter : MonoBehaviour
     [Tooltip("Number of seconds between each death ping.")]
     float secondsBetweenDeathPings;
     [SerializeField]
+    [Tooltip("Number of seconds between each dying sound effect.")]
+    float secondsBetweenDeathNoises;
+    [SerializeField]
     [Tooltip("Reference to the renderer.")]
     SpriteRenderer render;
     [SerializeField]
     [Tooltip("AudioSource to use for playing the ping sound effect.")]
     AudioSource audioSourcePing;
+    [SerializeField]
+    [Tooltip("AudioSource to use for the coin sound effect.")]
+    AudioSource audioSourceCoin;
+    [SerializeField]
+    [Tooltip("AudioSource to use for the dying.")]
+    AudioSource audioSourceDying;
 
     float secondsSinceLastPing = 0.0f;
     bool dying = false;
     float dyingSeconds = 0.0f;
     float secondsSinceDeathPing = 0.0f;
+    float secondsSinceDeathNoise = 0.0f;
 
     private void Update()
     {
@@ -78,6 +88,13 @@ public class PlayerCharacter : MonoBehaviour
                     secondsSinceDeathPing -= secondsBetweenDeathPings;
                 }
                 secondsSinceDeathPing += Time.deltaTime;
+                if (secondsSinceDeathNoise > secondsBetweenDeathNoises)
+                {
+                    PlaySoundDying();
+                    secondsSinceDeathNoise -= secondsBetweenDeathNoises;
+                }
+                //secondsSinceDeathNoise += Time.deltaTime;
+                secondsSinceDeathNoise += dyingSeconds;
             }
             if (dyingSeconds > secondsBeforeDeathRestart)
             {
@@ -120,7 +137,7 @@ public class PlayerCharacter : MonoBehaviour
             RigidbodyUtil.StopRigidbody(rb);
             createBurst.SetCount(1);
             // Play sound effect.
-            // TODO
+            PlaySoundDying();
         }
     }
 
@@ -131,5 +148,17 @@ public class PlayerCharacter : MonoBehaviour
             Die();
             collision.gameObject.GetComponent<Spike>().Highlight();
         }
+    }
+
+    public void PlaySoundCoin()
+    {
+        audioSourceCoin.Play();
+        //audioSourceCoin.PlayOneShot(audioSourceCoin.clip);
+    }
+
+    private void PlaySoundDying()
+    {
+        audioSourceDying.Play();
+        //audioSourceDying.PlayOneShot(audioSourceDying.clip);
     }
 }
