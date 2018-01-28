@@ -44,6 +44,11 @@ public class GlobalTimer : MonoBehaviour
         return globalTimeString;
     }
 
+    public static float GetGlobalTime()
+    {
+        return globalTime;
+    }
+
     public static void StartTimer()
     {
         started = true;
