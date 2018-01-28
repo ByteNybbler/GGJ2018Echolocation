@@ -30,5 +30,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 8.unity
     guid: e5bb34e7dcc2d4346bc85677e035179a
   - enabled: 1
+    path: Assets/Scenes/Levels/Level 9.unity
+    guid: 4754f13de517eea41b3b34a04278d665
+  - enabled: 1
     path: Assets/Scenes/Splash Screens/The End.unity
     guid: 6c385d2c60e92d54dac2993e0791332a
