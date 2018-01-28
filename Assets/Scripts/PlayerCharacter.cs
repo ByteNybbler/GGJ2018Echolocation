@@ -61,6 +61,11 @@ public class PlayerCharacter : MonoBehaviour
         float inputHorizontal = Input.GetAxis("Horizontal");
         float inputVertical = Input.GetAxis("Vertical");
 
+        if (inputHorizontal != 0.0f || inputVertical != 0.0f)
+        {
+            GlobalTimer.StartTimer();
+        }
+
         if (dying)
         {
             //transform.RotateAround(transform.position, Vector3.forward, dyingSeconds);

@@ -17,6 +17,7 @@ public class GlobalTimer : MonoBehaviour
 
     private static float globalTime = 0.0f;
     private static string globalTimeString = "";
+    private static bool started = false;
 
     private void Awake()
     {
@@ -25,7 +26,10 @@ public class GlobalTimer : MonoBehaviour
 
     private void Update()
     {
-        globalTime += Time.deltaTime;
+        if (started)
+        {
+            globalTime += Time.deltaTime;
+        }
         UpdateGlobalTimeString();
     }
 
@@ -38,5 +42,10 @@ public class GlobalTimer : MonoBehaviour
     public static string GetGlobalTimeString()
     {
         return globalTimeString;
+    }
+
+    public static void StartTimer()
+    {
+        started = true;
     }
 }
