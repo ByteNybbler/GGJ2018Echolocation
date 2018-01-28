@@ -21,7 +21,7 @@ public class Coin : MonoBehaviour
 
     private void OnCollected()
     {
-        Debug.Log("Collected a coin.");
+        //Debug.Log("Collected a coin.");
         Destroy(transform.root.gameObject);
         if (Collected != null)
         {

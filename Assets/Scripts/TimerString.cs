@@ -7,14 +7,14 @@ using UnityEngine;
 
 public class TimerString : MonoBehaviour
 {
-    public string Get(float rawSeconds)
+    public string GetTimerString(float rawSeconds)
     {
         int seconds = Mathf.FloorToInt(rawSeconds);
         int secondsOnly = seconds % 60;
         int minutesOnly = seconds / 60;
 
         string result = "";
-        result += minutesOnly;
+        result += AddZeroPadding(minutesOnly, 2);
         result += ":";
         result += AddZeroPadding(secondsOnly, 2);
         return result;
