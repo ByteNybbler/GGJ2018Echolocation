@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212837695981592994}
   - component: {fileID: 95566647178180064}
   - component: {fileID: 61539325975040360}
-  - component: {fileID: 114463642510860564}
+  - component: {fileID: 114926340793007000}
   m_Layer: 0
   m_Name: PortalIn
   m_TagString: Exit
@@ -85,7 +85,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114463642510860564
+--- !u!114 &114926340793007000
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a1855058daaa746837885937bdbcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95566647178180064, guid: 1511d80ba5b6c8c4587e8d2be6ce1f76, type: 2}
+  animator: {fileID: 95566647178180064}
 --- !u!212 &212837695981592994
 SpriteRenderer:
   m_ObjectHideFlags: 1

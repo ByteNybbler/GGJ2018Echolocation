@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 223051981059274712}
   - component: {fileID: 114003355271194138}
   - component: {fileID: 114410889500603570}
-  - component: {fileID: 114573836759096798}
+  - component: {fileID: 114252399059988518}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -101,6 +101,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &114252399059988518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1369230621158970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f6d443d1aa66c45bf80b13c25e770c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textCoins: {fileID: 114696135402099858}
 --- !u!114 &114410889500603570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,19 +162,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Timer
---- !u!114 &114573836759096798
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1369230621158970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f6d443d1aa66c45bf80b13c25e770c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textCoins: {fileID: 114696135402099858, guid: d644f9a544a9f7845bf48f8f8dbd1fbf,
-    type: 2}
 --- !u!114 &114696135402099858
 MonoBehaviour:
   m_ObjectHideFlags: 1
