@@ -125,6 +125,11 @@ public class PlayerCharacter : MonoBehaviour
                 Burst();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneUtil.ExitGame();
+        }
     }
 
     // Ping!
