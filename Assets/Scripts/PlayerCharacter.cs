@@ -23,36 +23,85 @@ public class PlayerCharacter : MonoBehaviour
     [Tooltip("Number of seconds between each ping.")]
     float secondsBetweenPings;
     [SerializeField]
+    [Tooltip("Reference to the Shake component for the death animation.")]
+    Shake shake;
+    [SerializeField]
+    [Tooltip("How many seconds it takes for the player character's sprite to explode upon dying.")]
+    float secondsBeforeDeathExplosion;
+    [SerializeField]
+    [Tooltip("How many seconds it takes for the level to reset after dying.")]
+    float secondsBeforeDeathRestart;
+    [SerializeField]
+    [Tooltip("Number of seconds between each death ping.")]
+    float secondsBetweenDeathPings;
+    [SerializeField]
+    [Tooltip("Reference to the renderer.")]
+    SpriteRenderer render;
+    [SerializeField]
     [Tooltip("AudioSource to use for playing the ping sound effect.")]
     AudioSource audioSourcePing;
 
     float secondsSinceLastPing = 0.0f;
+    bool dying = false;
+    float dyingSeconds = 0.0f;
+    float secondsSinceDeathPing = 0.0f;
 
     private void Update()
     {
         float inputHorizontal = Input.GetAxis("Horizontal");
         float inputVertical = Input.GetAxis("Vertical");
 
-        //Vector2 move = new Vector2(inputHorizontal, inputVertical);
-        Vector2 move = new Vector2(0.0f, inputVertical) * moveSpeed;
-
-        float torque = -inputHorizontal * rotateSpeed;
-        //Debug.Log(torque);
-        rb.AddTorque(torque);
-        rb.AddForce(transform.rotation * move);
-
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (dying)
         {
-            Burst();
+            //transform.RotateAround(transform.position, Vector3.forward, dyingSeconds);
+            render.transform.Rotate(new Vector3(0.0f, 0.0f, dyingSeconds * dyingSeconds));
+            shake.SetMagnitude(dyingSeconds * 0.01f);
+            if (dyingSeconds > secondsBeforeDeathExplosion)
+            {
+                // Only proceed if the sprite is still visible.
+                if (render.enabled)
+                {
+                    // Create the death explosion!
+                    createBurst.SetSpread(360.0f);
+                    createBurst.SetCount(200);
+                    createBurst.Burst(Vector2.up);
+
+                    // Disable the sprite renderer.
+                    render.enabled = false;
+                }
+            }
+            else
+            {
+                while (secondsSinceDeathPing > secondsBetweenDeathPings)
+                {
+                    createBurst.Burst(Random.insideUnitCircle.normalized);
+                    secondsSinceDeathPing -= secondsBetweenDeathPings;
+                }
+                secondsSinceDeathPing += Time.deltaTime;
+            }
+            if (dyingSeconds > secondsBeforeDeathRestart)
+            {
+                // Restart the scene.
+                SceneUtil.ResetScene();
+            }
+            dyingSeconds += Time.deltaTime;
         }
-        */
-
-        secondsSinceLastPing += Time.deltaTime;
-        while (secondsSinceLastPing > secondsBetweenPings)
+        else
         {
-            secondsSinceLastPing -= secondsBetweenPings;
-            Burst();
+            //Vector2 move = new Vector2(inputHorizontal, inputVertical);
+            Vector2 move = new Vector2(0.0f, inputVertical) * moveSpeed;
+
+            float torque = -inputHorizontal * rotateSpeed;
+            //Debug.Log(torque);
+            rb.AddTorque(torque);
+            rb.AddForce(transform.rotation * move);
+
+            secondsSinceLastPing += Time.deltaTime;
+            while (secondsSinceLastPing > secondsBetweenPings)
+            {
+                secondsSinceLastPing -= secondsBetweenPings;
+                Burst();
+            }
         }
     }
 
@@ -65,7 +114,14 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Die()
     {
-        // TODO
+        if (!dying)
+        {
+            dying = true;
+            RigidbodyUtil.StopRigidbody(rb);
+            createBurst.SetCount(1);
+            // Play sound effect.
+            // TODO
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -74,6 +130,15 @@ public class PlayerCharacter : MonoBehaviour
         {
             //Debug.Log("Touched exit!");
             SceneUtil.LoadNextScene();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Spike")
+        {
+            Die();
+            collision.gameObject.GetComponent<Spike>().Highlight();
         }
     }
 }

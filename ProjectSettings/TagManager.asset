@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Exit
   - Coin
+  - Spike
   layers:
   - Default
   - TransparentFX

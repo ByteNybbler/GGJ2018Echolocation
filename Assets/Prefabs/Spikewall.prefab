@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4270845215727534}
   - component: {fileID: 212211370324581658}
   - component: {fileID: 60492800480405996}
+  - component: {fileID: 114497825111660640}
   m_Layer: 0
   m_Name: Spikestrip (9)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +39,10 @@ GameObject:
   - component: {fileID: 4896423926061436}
   - component: {fileID: 212110312089956216}
   - component: {fileID: 60660773872191184}
+  - component: {fileID: 114043131607210694}
   m_Layer: 0
   m_Name: Spikestrip (8)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,9 +57,10 @@ GameObject:
   - component: {fileID: 4082198197252244}
   - component: {fileID: 212036544734548392}
   - component: {fileID: 60234779192000234}
+  - component: {fileID: 114977058083779324}
   m_Layer: 0
   m_Name: Spikestrip (5)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,9 +75,10 @@ GameObject:
   - component: {fileID: 4052527645152520}
   - component: {fileID: 212040905998568216}
   - component: {fileID: 60497797926822128}
+  - component: {fileID: 114967780005143934}
   m_Layer: 0
   m_Name: Spikestrip (10)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,9 +93,10 @@ GameObject:
   - component: {fileID: 4893673841013992}
   - component: {fileID: 212699120924267232}
   - component: {fileID: 60976710189012690}
+  - component: {fileID: 114355428824725080}
   m_Layer: 0
   m_Name: Spikestrip (6)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +128,10 @@ GameObject:
   - component: {fileID: 4070823835811494}
   - component: {fileID: 212319470803941334}
   - component: {fileID: 60862831722275226}
+  - component: {fileID: 114942904460951706}
   m_Layer: 0
   m_Name: Spikestrip (7)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,6 +534,84 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &114043131607210694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1332536862441486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212110312089956216}
+--- !u!114 &114355428824725080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572309544514106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212699120924267232}
+--- !u!114 &114497825111660640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021485095601192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212211370324581658}
+--- !u!114 &114942904460951706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798663834900352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212319470803941334}
+--- !u!114 &114967780005143934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1391971520548480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212040905998568216}
+--- !u!114 &114977058083779324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335302432553076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212036544734548392}
 --- !u!212 &212036544734548392
 SpriteRenderer:
   m_ObjectHideFlags: 1

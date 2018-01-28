@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4626934345756118}
   - component: {fileID: 212318014416923362}
   - component: {fileID: 60232467438835164}
+  - component: {fileID: 114664848330455478}
   m_Layer: 0
   m_Name: Spikeball
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,19 @@ PolygonCollider2D:
       - {x: -0.06398797, y: 0.014842749}
       - {x: -0.076669455, y: 0.0013318658}
       - {x: -0.06434655, y: -0.011262894}
+--- !u!114 &114664848330455478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381535162579882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 500f90df36f589742b3e09dca28b8589, type: 3}
+  render: {fileID: 212318014416923362}
 --- !u!212 &212318014416923362
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -34,4 +34,19 @@ public class CreateBurst : MonoBehaviour
             degreesSoFar += degreeDifference;
         }
     }
+
+    public void SetCount(int newVal)
+    {
+        count = newVal;
+    }
+
+    public void SetSpeed(float newVal)
+    {
+        speed = newVal;
+    }
+
+    public void SetSpread(float newVal)
+    {
+        spread = newVal;
+    }
 }

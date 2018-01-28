@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4052022470381856}
   - component: {fileID: 212451857593202592}
   - component: {fileID: 60504361545125904}
+  - component: {fileID: 114588581729288550}
   m_Layer: 0
   m_Name: Spikestrip
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +88,19 @@ PolygonCollider2D:
       - {x: -0.06043625, y: 0.036783457}
       - {x: -0.072427034, y: 0.022460878}
       - {x: -0.073534966, y: -0.00511539}
+--- !u!114 &114588581729288550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1994848128247426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be66796a0f7fd542a5a68b4aa0c9f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteHighlighted: {fileID: 21300000, guid: 5bbf8fafb92e14a44aea8e1fff9e1473, type: 3}
+  render: {fileID: 212451857593202592}
 --- !u!212 &212451857593202592
 SpriteRenderer:
   m_ObjectHideFlags: 1

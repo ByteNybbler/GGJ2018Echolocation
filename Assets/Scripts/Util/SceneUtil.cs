@@ -17,4 +17,11 @@ public class SceneUtil : MonoBehaviour
             SceneManager.LoadScene(nextSceneIndex);
         }
     }
+
+    // Resets the current scene.
+    public static void ResetScene()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
 }

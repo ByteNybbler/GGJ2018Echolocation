@@ -100,16 +100,13 @@ public class Ping : MonoBehaviour
             //Debug.Log("It's a coin!");
             ChangeColor(colorCoin);
         }
-        rb.constraints |= RigidbodyConstraints2D.FreezePosition;
-        rb.velocity = Vector2.zero;
+        RigidbodyUtil.StopRigidbody(rb);
         Terminate();
     }
 
     private void Terminate()
     {
         fadingOut = true;
-        //GameObject.Instantiate(prefabLight, transform.position + Vector3.back, Quaternion.identity);
-        //Destroy(gameObject);
     }
 
     private void ChangeColor(Color col)
